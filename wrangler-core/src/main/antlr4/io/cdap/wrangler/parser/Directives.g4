@@ -36,6 +36,12 @@ options {
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+BYTE_SIZE: DIGIT+ ('.' DIGIT+)? BYTE_UNIT;
+TIME_DURATION: DIGIT+ ('.' DIGIT+)? TIME_UNIT;
+
+fragment BYTE_UNIT: [kK][bB] | [mM][bB] | [gG][bB] | [tT][bB];
+fragment TIME_UNIT: 'ms' | 's' | 'sec' | 'seconds' | 'm' | 'min' | 'minutes';
+fragment DIGIT: [0-9];
 }
 
 /**
